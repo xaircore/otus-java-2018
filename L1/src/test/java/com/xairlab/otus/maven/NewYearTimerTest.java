@@ -1,6 +1,6 @@
 package com.xairlab.otus.maven;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 class NewYearTimerTest {
@@ -8,6 +8,6 @@ class NewYearTimerTest {
     @Test
     void positive(){
         int days = com.xairlab.otus.maven.NewYearTimer.daysToNewYear().getDays();
-        assertEquals(days, days, "Время не совпадает");
+        assertTrue(days >= 0, "Время до нового года не может быть отрицательным");
     }
 }
