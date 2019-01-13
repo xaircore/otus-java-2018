@@ -4,7 +4,7 @@ import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
 public class NewYearTimer {
-    public static void main(String... args) {
+    public static void main(String[] args) {
         System.out.println("До Нового года осталось " + daysToNewYear().getDays() + " дней");
     }
 
