@@ -16,8 +16,6 @@
 
     <name>maven_lesson</name>
 
-    <packaging>jar</packaging>
-
     <dependencies>
         <dependency>
             <groupId>joda-time</groupId>
@@ -59,7 +57,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>main.java.co.xairlab.otus.maven.NewYearTimer</mainClass>
+                                    <mainClass>com.xairlab.otus.maven.NewYearTimer</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>

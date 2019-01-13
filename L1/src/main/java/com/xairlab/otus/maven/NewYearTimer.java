@@ -1,4 +1,4 @@
-package main.java.com.xairlab.otus.maven;
+package com.xairlab.otus.maven;
 
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
