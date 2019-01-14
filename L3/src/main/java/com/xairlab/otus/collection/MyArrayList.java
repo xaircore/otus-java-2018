@@ -1,20 +1,26 @@
 package com.xairlab.otus.collection;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class MyArrayList<T> implements List<T> {
 
+    private final int capacity = 5;
+    private int size = 0;
+    private int currentIndex = 0;
+    private Object[] data;
+
+    public MyArrayList() {
+        data = new Object[capacity];
+    }
+
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     @Override
@@ -39,7 +45,10 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean add(T t) {
-        return false;
+        data[currentIndex] = t;
+        currentIndex++;
+        size++;
+        return true;
     }
 
     @Override
