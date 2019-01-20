@@ -14,7 +14,7 @@ public class Measure {
 
     public void printSize(boolean item) {
         System.out.println(item);
-        vm.sizeOfField("boolean");
+        System.out.println(vm.sizeOfField("boolean"));
     }
 
     public void printSize(byte item) {
@@ -59,7 +59,7 @@ public class Measure {
 
     }
 
-    public void printSizeObject(Object item){
+    public void printSizeObject(Object item) {
         System.out.println(item);
         System.out.println(ClassLayout.parseInstance(item).instanceSize());
     }
