@@ -6,7 +6,6 @@ public class MyArrayList<T> implements List<T> {
 
     private final int capacity = 5;
     private int size = 0;
-    private int currentIndex = 0;
     private Object[] data;
 
     public MyArrayList() {
@@ -25,6 +24,14 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean contains(Object o) {
+        if (isEmpty()){
+            return false;
+        }
+        for (Object item : data) {
+            if (o.equals(item)){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -45,8 +52,7 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean add(T t) {
-        data[currentIndex] = t;
-        currentIndex++;
+        data[size] = t;
         size++;
         return true;
     }
@@ -58,7 +64,13 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
+        int match = 0;
+        for (Object item : c){
+            if (contains(item)){
+                match++;
+            }
+        }
+        return match == c.size();
     }
 
     @Override
@@ -88,12 +100,13 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public T get(int index) {
-        return null;
+        return (T)data[index];
     }
 
     @Override
     public T set(int index, T element) {
-        return null;
+        data[index] = element;
+        return element;
     }
 
     @Override

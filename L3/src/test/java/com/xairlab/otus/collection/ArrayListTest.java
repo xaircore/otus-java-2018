@@ -1,17 +1,19 @@
 package com.xairlab.otus.collection;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class MyArrayListTest {
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class ArrayListTest {
 
     @Test
     void size() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         assertTrue(list.size() == 0);
 
         list.add(1);
@@ -24,7 +26,7 @@ class MyArrayListTest {
     @Test
     void isEmpty() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         assertTrue(list.isEmpty());
 
         list.add(1);
@@ -34,7 +36,7 @@ class MyArrayListTest {
     @Test
     void contains() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         assertFalse(list.contains(0));
 
         list.add(0);
@@ -45,14 +47,14 @@ class MyArrayListTest {
     @Test
     void add() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         assertTrue(list.add(1));
     }
 
     @Test
     void remove() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         assertTrue(list.remove(0) == 0);
     }
@@ -60,7 +62,7 @@ class MyArrayListTest {
     @Test
     void containsAll() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(7);
 
@@ -78,11 +80,11 @@ class MyArrayListTest {
     @Test
     void addAll() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(7);
 
-        List<Integer> list2= new MyArrayList<>();
+        List<Integer> list2= new ArrayList<>();
         list2.addAll(list);
         assertTrue(list2.size() == 2);
         assertTrue(list2.get(0) == 0);
@@ -92,13 +94,13 @@ class MyArrayListTest {
     @Test
     void removeAll() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(5);
         list.add(7);
         list.add(9);
 
-        List<Integer> list2= new MyArrayList<>();
+        List<Integer> list2= new ArrayList<>();
         list2.add(5);
         list2.add(9);
         list.removeAll(list2);
@@ -110,13 +112,13 @@ class MyArrayListTest {
     @Test
     void retainAll() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(5);
         list.add(7);
         list.add(9);
 
-        List<Integer> list2= new MyArrayList<>();
+        List<Integer> list2= new ArrayList<>();
         list2.add(5);
         list2.add(9);
         list.retainAll(list2);
@@ -128,7 +130,7 @@ class MyArrayListTest {
     @Test
     void clear() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.clear();
         assertTrue(list.size() == 0);
 
@@ -141,7 +143,7 @@ class MyArrayListTest {
     @Test
     void get() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(5);
         list.add(7);
@@ -154,7 +156,7 @@ class MyArrayListTest {
     @Test
     void set() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(5);
         list.add(7);
@@ -169,7 +171,7 @@ class MyArrayListTest {
     @Test
     void indexOf() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(5);
         list.add(5);
@@ -183,7 +185,7 @@ class MyArrayListTest {
     @Test
     void lastIndexOf() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(5);
         list.add(5);
