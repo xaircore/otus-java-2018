@@ -1,6 +1,7 @@
 package com.xairlab.otus.collection;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
@@ -12,13 +13,13 @@ class MyArrayListTest {
     void size() {
 
         List<Integer> list = new MyArrayList<>();
-        assertTrue(list.size() == 0);
+        assertEquals(list.size(), 0);
 
         list.add(1);
-        assertTrue(list.size() == 1);
+        assertEquals(list.size(), 1);
 
         list.remove(0);
-        assertTrue(list.size() == 0);
+        assertEquals(list.size(), 0);
     }
 
     @Test
@@ -54,7 +55,9 @@ class MyArrayListTest {
 
         List<Integer> list = new MyArrayList<>();
         list.add(0);
-        assertTrue(list.remove(0) == 0);
+
+        int fst = list.remove(0);
+        assertEquals(fst, 0);
     }
 
     @Test
@@ -78,15 +81,19 @@ class MyArrayListTest {
     @Test
     void addAll() {
 
-        List<Integer> list = new MyArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(7);
 
-        List<Integer> list2= new MyArrayList<>();
+        List<Integer> list2 = new MyArrayList<>();
         list2.addAll(list);
-        assertTrue(list2.size() == 2);
-        assertTrue(list2.get(0) == 0);
-        assertTrue(list2.get(1) == 7);
+        assertEquals(list2.size(), 2);
+
+        int zero = list2.get(0);
+        assertEquals(zero, 0);
+
+        int fst = list2.get(1);
+        assertEquals(fst, 7);
     }
 
     @Test
@@ -98,13 +105,17 @@ class MyArrayListTest {
         list.add(7);
         list.add(9);
 
-        List<Integer> list2= new MyArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
         list2.add(5);
         list2.add(9);
         list.removeAll(list2);
-        assertTrue(list.size() == 2);
-        assertTrue(list.get(0) == 0);
-        assertTrue(list.get(1) == 7);
+        assertEquals(list.size(), 2);
+
+        int zero = list.get(0);
+        assertEquals(zero, 0);
+
+        int fst = list.get(1);
+        assertEquals(fst, 7);
     }
 
     @Test
@@ -116,13 +127,17 @@ class MyArrayListTest {
         list.add(7);
         list.add(9);
 
-        List<Integer> list2= new MyArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
         list2.add(5);
         list2.add(9);
         list.retainAll(list2);
-        assertTrue(list.size() == 2);
-        assertTrue(list.get(0) == 5);
-        assertTrue(list.get(1) == 9);
+        assertEquals(list.size(), 2);
+
+        int zero = list.get(0);
+        assertEquals(zero, 5);
+
+        int fst = list.get(1);
+        assertEquals(fst, 9);
     }
 
     @Test
@@ -130,12 +145,12 @@ class MyArrayListTest {
 
         List<Integer> list = new MyArrayList<>();
         list.clear();
-        assertTrue(list.size() == 0);
+        assertEquals(list.size(), 0);
 
         list.add(0);
         list.add(7);
         list.clear();
-        assertTrue(list.size() == 0);
+        assertEquals(list.size(), 0);
     }
 
     @Test
@@ -147,8 +162,11 @@ class MyArrayListTest {
         list.add(7);
         list.add(9);
 
-        assertTrue(list.get(0) == 0);
-        assertTrue(list.get(3) == 9);
+        int zero = list.get(0);
+        assertEquals(zero, 0);
+
+        int third = list.get(3);
+        assertEquals(third, 9);
     }
 
     @Test
@@ -162,8 +180,12 @@ class MyArrayListTest {
 
         list.set(0, 10);
         list.set(3, 19);
-        assertTrue(list.get(0) == 10);
-        assertTrue(list.get(3) == 19);
+
+        int zero = list.get(0);
+        assertEquals(zero, 10);
+
+        int third = list.get(3);
+        assertEquals(third, 19);
     }
 
     @Test
@@ -176,8 +198,8 @@ class MyArrayListTest {
         list.add(7);
         list.add(9);
 
-        assertTrue(list.indexOf(5) == 1);
-        assertTrue(list.indexOf(20) == -1);
+        assertEquals(list.indexOf(5), 1);
+        assertEquals(list.indexOf(20), -1);
     }
 
     @Test
@@ -190,7 +212,7 @@ class MyArrayListTest {
         list.add(7);
         list.add(9);
 
-        assertTrue(list.lastIndexOf(5) == 2);
-        assertTrue(list.indexOf(20) == -1);
+        assertEquals(list.lastIndexOf(5), 2);
+        assertEquals(list.lastIndexOf(20), -1);
     }
 }

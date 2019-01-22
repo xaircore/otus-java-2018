@@ -24,11 +24,11 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean contains(Object o) {
-        if (isEmpty()){
+        if (isEmpty()) {
             return false;
         }
         for (Object item : data) {
-            if (o.equals(item)){
+            if (o.equals(item)) {
                 return true;
             }
         }
@@ -52,21 +52,37 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean add(T t) {
+        if (size() == data.length) {
+            levelUp();
+        }
         data[size] = t;
         size++;
         return true;
     }
 
+    private void levelUp() {
+        int newCapacity = data.length * capacity;
+        data = Arrays.copyOf(data, newCapacity, Object[].class);
+    }
+
     @Override
     public boolean remove(Object o) {
-        return false;
+        int objectIndex = indexOf(o);
+        if (objectIndex == -1) {
+            return false;
+        }
+        for (int i = objectIndex; i < size(); i++) {
+            data[i] = data[i + 1];
+        }
+        size--;
+        return true;
     }
 
     @Override
     public boolean containsAll(Collection<?> c) {
         int match = 0;
-        for (Object item : c){
-            if (contains(item)){
+        for (Object item : c) {
+            if (contains(item)) {
                 match++;
             }
         }
@@ -75,7 +91,10 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-        return false;
+        for (T item : c) {
+            add(item);
+        }
+        return true;
     }
 
     @Override
@@ -85,22 +104,35 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        return false;
+        boolean result = false;
+        for (Object item : c) {
+            result |= remove(item);
+        }
+        return result;
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        return false;
+        for (int i = 0; i < size(); i++) {
+            Object current = data[i];
+            if (!c.contains(current)) {
+                remove(current);
+            }
+        }
+        return true;
     }
 
     @Override
     public void clear() {
-
+        for (int i = 0; i < data.length; i++) {
+            data[i] = null;
+        }
+        size = 0;
     }
 
     @Override
     public T get(int index) {
-        return (T)data[index];
+        return (T) data[index];
     }
 
     @Override
@@ -116,17 +148,36 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public T remove(int index) {
-        return null;
+        T element = (T) data[index];
+        for (int i = index; i < size(); i++) {
+            data[i] = data[i + 1];
+        }
+        size--;
+        return element;
     }
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        int objectIndex = -1;
+        for (int i = 0; i < size(); i++) {
+            if (data[i] == o) {
+                objectIndex = i;
+                break;
+            }
+        }
+        return objectIndex;
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        int objectIndex = -1;
+        for (int i = size() - 1; i > 0; i--) {
+            if (data[i] == o) {
+                objectIndex = i;
+                break;
+            }
+        }
+        return objectIndex;
     }
 
     @Override
