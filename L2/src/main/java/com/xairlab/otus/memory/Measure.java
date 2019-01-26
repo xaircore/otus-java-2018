@@ -4,6 +4,8 @@ import org.openjdk.jol.vm.VM;
 import org.openjdk.jol.vm.VirtualMachine;
 import org.openjdk.jol.info.ClassLayout;
 
+import java.util.function.Supplier;
+
 public class Measure {
 
     final private VirtualMachine vm;
@@ -59,7 +61,8 @@ public class Measure {
 
     }
 
-    public void printSizeObject(Object item) {
+    public <T> void printSizeObject(Supplier<T> supplier) {
+        T item = supplier.get();
         System.out.println(item);
         System.out.println(ClassLayout.parseInstance(item).instanceSize());
     }

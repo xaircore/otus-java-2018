@@ -4,6 +4,63 @@ import java.util.*;
 
 public class MyArrayList<T> implements List<T> {
 
+    private class MyArrayListIterator implements ListIterator<T> {
+
+        private int index = 0;
+
+        @Override
+        public boolean hasNext() {
+            return index != size();
+        }
+
+        @Override
+        public T next() {
+            T element = (T) data[index];
+            index++;
+            return element;
+        }
+
+        @Override
+        public boolean hasPrevious() {
+            return index >= 0;
+        }
+
+        @Override
+        public T previous() {
+            return (T) data[index - 1];
+        }
+
+        @Override
+        public int nextIndex() {
+            return index;
+        }
+
+        @Override
+        public int previousIndex() {
+            return index - 1;
+        }
+
+        @Override
+        public void remove() {
+
+        }
+
+        @Override
+        public void set(T t) {
+            int toSet = index;
+            if (index != 0) {
+                toSet = index - 1;
+            }
+            data[toSet] = t;
+        }
+
+        @Override
+        public void add(T t) {
+            data[index] = t;
+            index++;
+        }
+    }
+
     private final int capacity = 5;
     private int size = 0;
     private Object[] data;
@@ -42,7 +99,7 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        return Arrays.copyOf(data, size(), Object[].class);
     }
 
     @Override
@@ -182,7 +239,7 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public ListIterator<T> listIterator() {
-        return null;
+        return new MyArrayListIterator();
     }
 
     @Override

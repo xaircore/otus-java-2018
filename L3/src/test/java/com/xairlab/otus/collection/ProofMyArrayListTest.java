@@ -1,6 +1,6 @@
 package com.xairlab.otus.collection;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 import java.util.List;

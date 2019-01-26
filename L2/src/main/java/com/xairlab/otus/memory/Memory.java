@@ -40,39 +40,36 @@ public class Memory {
 
     public static void sizeOfObjects(Measure measure) {
 
-        TestB t1 = new TestB();
-        TestB2 t2 = new TestB2();
-        TestB4 t3 = new TestB4();
-        TestInt t4 = new TestInt();
-        TestInt2 t5 = new TestInt2();
-        TestInt4 t6 = new TestInt4();
-        Mix t7 = new Mix();
-
-        measure.printSizeObject(t1);
-        measure.printSizeObject(t2);
-        measure.printSizeObject(t3);
-        measure.printSizeObject(t4);
-        measure.printSizeObject(t5);
-        measure.printSizeObject(t6);
-        measure.printSizeObject(t7);
+        measure.printSizeObject(() -> new TestB());
+        measure.printSizeObject(() -> new TestB2());
+        measure.printSizeObject(() -> new TestB4());
+        measure.printSizeObject(() -> new TestInt());
+        measure.printSizeObject(() -> new TestInt2());
+        measure.printSizeObject(() -> new TestInt4());
+        measure.printSizeObject(() -> new Mix());
     }
 
-    public static void sizeOfCollections(Measure measure){
+    public static void sizeOfCollections(Measure measure) {
 
-        Integer[] t8 = new Integer[5];
-        List<Boolean> t9 = new ArrayList<>();
-        t9.add(Boolean.TRUE);
-        t9.add(Boolean.TRUE);
-        t9.add(Boolean.TRUE);
-        t9.add(Boolean.FALSE);
-        t9.add(Boolean.TRUE);
-        Map<String, Integer> t10 = new TreeMap<>();
-        t10.put("A", 10);
-        t10.put("B", 20);
 
-        measure.printSizeObject(t8);
-        measure.printSizeObject(t9);
-        measure.printSizeObject(t10);
+        measure.printSizeObject(() -> new Integer[5]);
+
+        measure.printSizeObject(() -> {
+            List<Boolean> t9 = new ArrayList<>();
+            t9.add(Boolean.TRUE);
+            t9.add(Boolean.TRUE);
+            t9.add(Boolean.TRUE);
+            t9.add(Boolean.FALSE);
+            t9.add(Boolean.TRUE);
+            return t9;
+        });
+
+        measure.printSizeObject(() -> {
+            Map<String, Integer> t10 = new TreeMap<>();
+            t10.put("A", 10);
+            t10.put("B", 20);
+            return t10;
+        });
     }
 }
 
