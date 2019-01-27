@@ -42,7 +42,7 @@ public class MyArrayList<T> implements List<T> {
 
         @Override
         public void remove() {
-
+            throw new RuntimeException();
         }
 
         @Override
@@ -94,7 +94,7 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        throw new RuntimeException();
     }
 
     @Override
@@ -104,7 +104,7 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public <T1> T1[] toArray(T1[] a) {
-        return null;
+        throw new RuntimeException();
     }
 
     @Override
@@ -156,7 +156,7 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean addAll(int index, Collection<? extends T> c) {
-        return false;
+        throw new RuntimeException();
     }
 
     @Override
@@ -200,7 +200,7 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public void add(int index, T element) {
-
+        throw new RuntimeException();
     }
 
     @Override
@@ -244,11 +244,11 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public ListIterator<T> listIterator(int index) {
-        return null;
+        throw new RuntimeException();
     }
 
     @Override
     public List<T> subList(int fromIndex, int toIndex) {
-        return null;
+        throw new RuntimeException();
     }
 }
