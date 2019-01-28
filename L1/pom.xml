@@ -92,8 +92,20 @@
                     <outputDirectory>target</outputDirectory>
                     <options>
                         <option>-keep public class com.xairlab.otus.maven.NewYearTimer {public static void main(java.lang.String[]);}</option>
-                        <option>-keep class org.joda.** { *; }</option>
                         <option>-dontwarn</option>
+                        <option>-repackageclasses 'ob'</option>
+                        <option>-keep interface org.joda.time.format.InternalPrinter { *; }</option>
+                        <option>-keep interface org.joda.time.format.InternalParser { *; }</option>
+                        <option>-keep public interface org.joda.time.format.PeriodPrinter { *; }</option>
+                        <option>-keep public interface org.joda.time.format.PeriodParser { *; }</option>
+                        <option>-keep public class org.joda.time.format.DateTimeFormatterBuilder { *; }</option>
+                        <option>-keep public class org.joda.time.format.PeriodFormatterBuilder { *; }</option>
+                        <option>-keep class org.joda.time.format.DateTimeFormatterBuilder$StringLiteral { *; }</option>
+                        <option>-keep class org.joda.time.format.DateTimeFormatterBuilder$CharacterLiteral { *; }</option>
+                        <option>-keep class org.joda.time.format.DateTimeFormatterBuilder$Composite { *; }</option>
+                        <option>-keep class org.joda.time.format.PeriodFormatterBuilder$FieldFormatter { *; }</option>
+                        <option>-keep class org.joda.time.format.PeriodFormatterBuilder$Literal { *; }</option>
+                        <option>-keep class org.joda.time.format.PeriodFormatterBuilder$Composite { *; }</option>
                     </options>
                 </configuration>
             </plugin>
