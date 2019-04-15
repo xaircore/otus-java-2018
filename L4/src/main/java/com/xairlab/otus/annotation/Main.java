@@ -1,5 +1,6 @@
 package com.xairlab.otus.annotation;
 
+import com.xairlab.otus.annotation.runner.Runner;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.xairlab.otus.annotation;
+package com.xairlab.otus.annotation.core;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -6,6 +6,11 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.xairlab.otus.annotation.api.After;
+import com.xairlab.otus.annotation.api.Before;
+import com.xairlab.otus.annotation.api.Test;
+import com.xairlab.otus.annotation.api.TestStatus;
+import com.xairlab.otus.annotation.runner.Runner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +25,7 @@ public final class Suite {
     private int success = 0;
     private int failed = 0;
 
-    Suite(String name) {
+    public Suite(String name) {
         this.name = name;
         this.cases = getCases();
     }
@@ -52,8 +57,8 @@ public final class Suite {
     public void exec() {
         logger.info("Run suite: " + name);
         for (Case test : cases) {
-            test.exec();
-            switch (test.getStatus()) {
+            TestStatus status = test.exec();
+            switch (status) {
                 case SUCCESS:
                     success++;
                     break;

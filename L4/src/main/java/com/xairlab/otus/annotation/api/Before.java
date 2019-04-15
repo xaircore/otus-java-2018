@@ -1,4 +1,4 @@
-package com.xairlab.otus.annotation;
+package com.xairlab.otus.annotation.api;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

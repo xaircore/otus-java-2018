@@ -1,7 +1,8 @@
-package com.xairlab.otus.annotation;
+package com.xairlab.otus.annotation.runner;
 
 import java.util.ArrayList;
 
+import com.xairlab.otus.annotation.core.Suite;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
