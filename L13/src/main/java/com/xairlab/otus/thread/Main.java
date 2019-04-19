@@ -11,7 +11,7 @@ public class Main {
     private void action(int current) {
         while (true) {
             if (counter.get() % 2 == current) {
-                if (counter.get() % 18 == 1) {
+                if (counter.get() % 20 == 1) {
                     reverse = !reverse;
                 }
                 try {
