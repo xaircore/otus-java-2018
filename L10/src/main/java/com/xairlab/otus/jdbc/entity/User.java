@@ -9,12 +9,6 @@ public class User {
     private String name;
     private int age;
 
-    public User(long id, String name, int age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-
     public long getId() {
         return id;
     }
@@ -25,6 +19,18 @@ public class User {
 
     public int getAge() {
         return age;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override

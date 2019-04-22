@@ -4,5 +4,5 @@ public interface StoreService<T> {
 
     void save(T objectData);
 
-    <T> T load(long id, Class<T> clazz);
+    T load(long id, Class<T> clazz);
 }
