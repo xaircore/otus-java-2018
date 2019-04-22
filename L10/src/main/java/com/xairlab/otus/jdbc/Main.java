@@ -1,10 +1,11 @@
-import com.xairlab.otus.jdbc.Utils;
+package com.xairlab.otus.jdbc;
+
 import com.xairlab.otus.jdbc.connection.H2Connection;
 import com.xairlab.otus.jdbc.entity.User;
 import com.xairlab.otus.jdbc.service.H2Service;
 import com.xairlab.otus.jdbc.service.UserService;
 
-import java.sql.*;
+import java.sql.SQLException;
 
 public class Main {
 
