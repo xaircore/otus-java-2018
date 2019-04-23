@@ -11,7 +11,15 @@ public class AddressDataSet {
 
     private String street;
 
-    @OneToOne
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private User user;
 
     public long getId() {
