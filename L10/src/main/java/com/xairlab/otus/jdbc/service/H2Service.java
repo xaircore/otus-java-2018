@@ -210,12 +210,15 @@ public class H2Service<T> implements StoreService<T> {
                     Field idF = getIdField(clazz);
                     List<Field> fields = getFields(clazz);
                     setStm(idF, rs, fields, instance);
+                    rs.close();
                     return instance;
                 } catch (Exception e) {
                     e.printStackTrace();
+                    rs.close();
                     return null;
                 }
             } else {
+                rs.close();
                 return null;
             }
         } catch (SQLException e) {

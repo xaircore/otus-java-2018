@@ -2,6 +2,7 @@ package com.xairlab.otus.hibernate.entity;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -46,7 +47,7 @@ public class User {
     private String name;
     private int age;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private AddressDataSet addressDataSet;
 
     public List<PhoneDataSet> getPhoneDataSet() {
