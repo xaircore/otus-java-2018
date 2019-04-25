@@ -9,14 +9,14 @@ class BoxTest {
     @Test
     void nominal() {
 
-        Box b = new Box(10);
-        assertEquals(10, b.getNominal());
+        Box b = new Box(Banknote.FIFTY);
+        assertEquals(50, b.getNominal());
     }
 
     @Test
     void total() {
 
-        Box b = new Box(50);
+        Box b = new Box(Banknote.FIFTY);
         assertEquals(0, b.getTotal());
 
         b.putBanknotes(2);
@@ -31,7 +31,7 @@ class BoxTest {
 
     @Test
     void count() {
-        Box b = new Box(10);
+        Box b = new Box(Banknote.FIFTY);
         assertEquals(0, b.getCount());
 
         b.putBanknotes(2);

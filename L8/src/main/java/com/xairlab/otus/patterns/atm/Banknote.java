@@ -1,4 +1,4 @@
-package com.xairlab.otus.solid;
+package com.xairlab.otus.patterns.atm;
 
 public enum Banknote {
     FIFTY,

@@ -24,4 +24,15 @@ class BanknoteTest {
             Banknote.getByNominal(10000);
         });
     }
+
+    @Test
+    void getByBanknote() {
+        assertEquals(Banknote.getByBanknote(Banknote.FIFTY), 50);
+        assertEquals(Banknote.getByBanknote(Banknote.HUNDRED), 100);
+        assertEquals(Banknote.getByBanknote(Banknote.TWO_HUNDRED), 200);
+        assertEquals(Banknote.getByBanknote(Banknote.FIVE_HUNDRED), 500);
+        assertEquals(Banknote.getByBanknote(Banknote.THOUSAND), 1000);
+        assertEquals(Banknote.getByBanknote(Banknote.TWO_THOUSAND), 2000);
+        assertEquals(Banknote.getByBanknote(Banknote.FIVE_THOUSAND), 5000);
+    }
 }

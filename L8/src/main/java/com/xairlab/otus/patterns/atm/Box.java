@@ -1,4 +1,4 @@
-package com.xairlab.otus.solid;
+package com.xairlab.otus.patterns.atm;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,5 +41,11 @@ public class Box {
 
     public int getCount() {
         return count;
+    }
+
+    public Box copy(){
+        Box b = new Box(getBanknoteType());
+        b.putBanknotes(getCount());
+        return b;
     }
 }
