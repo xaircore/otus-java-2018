@@ -60,7 +60,6 @@ public class MyCache<K, V> implements HwCache<K, V> {
             if (item != null) {
                 hit++;
                 logger.debug("cache hit");
-                applyListener(key, item, "get from cache");
                 return item;
             } else {
                 remove(key);
