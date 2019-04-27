@@ -30,35 +30,44 @@ public class MyCache<K, V> implements HwCache<K, V> {
         listeners = new ArrayList<>();
     }
 
+    private boolean isValidKey(K key) {
+        return key != null && cache.containsKey(key);
+    }
+
     @Override
     public void put(K key, V value) {
         logger.debug("put value " + value + " to cache by key " + key);
-        cache.put(key, new SoftReference<>(value));
-        applyListener(key, value, "put to cache");
+        if (key != null) {
+            cache.put(key, new SoftReference<>(value));
+            applyListener(key, value, "put to cache");
+        }
     }
 
     @Override
     public void remove(K key) {
         logger.debug("remove value from cache by key " + key);
-        V item = cache.get(key).get();
-        applyListener(key, item, "remove from cache");
+        if (isValidKey(key)) {
+            V item = cache.remove(key).get();
+            applyListener(key, item, "remove from cache");
+        }
     }
 
     @Override
     public V get(K key) {
         logger.debug("get value from cache by key " + key);
-        if (cache.containsKey(key)) {
+        if (isValidKey(key)) {
             V item = cache.get(key).get();
             if (item != null) {
                 hit++;
                 logger.debug("cache hit");
-                applyListener(key, item, "cache hit");
+                applyListener(key, item, "get from cache");
                 return item;
+            } else {
+                remove(key);
             }
         }
         miss++;
         logger.debug("cache miss");
-        applyListener(key, null, "cache miss");
         return null;
     }
 
