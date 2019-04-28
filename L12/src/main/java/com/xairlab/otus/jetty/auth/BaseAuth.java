@@ -5,27 +5,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Base64;
-import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class BaseAuth implements Filter {
 
     private ServletContext context;
-    final private List<String> admins;
+    final private Set<String> admins;
 
     public BaseAuth() {
-        admins = new ArrayList<>();
+        admins = new TreeSet<>();
     }
 
     private boolean isAdmin(byte[] hash) {
-        String credentials = new String(hash);
-        for (String data : admins) {
-            if (data.equals(credentials)) {
-                return true;
-            }
-        }
-        return false;
+        return admins.contains(new String(hash));
     }
 
     public void addAdmin(String login, String password) {

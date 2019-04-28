@@ -23,18 +23,13 @@ public class Find extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String search = req.getParameter("search");
-        boolean find = false;
-        List<User> users = userService.all();
-        for (User user : users) {
-            if (user.getName().equals(search)) {
-                JtwigModel model = new JtwigModel();
-                model.with("user", user);
-                template.render(model, resp.getOutputStream());
-                find = true;
-            }
-        }
-        if (!find) {
+        User user = userService.findByName(search);
+        if (user == null) {
             resp.sendError(404);
+        } else {
+            JtwigModel model = new JtwigModel();
+            model.with("user", user);
+            template.render(model, resp.getOutputStream());
         }
     }
 }

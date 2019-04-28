@@ -16,11 +16,11 @@ public class UserService {
         service.save(user);
     }
 
-    public User load(long id) {
-        return service.load(id, User.class);
+    public List<User> all() {
+        return service.all();
     }
 
-    public List<User> all(){
-        return service.all();
+    public User findByName(String name) {
+        return service.findByName(name);
     }
 }
