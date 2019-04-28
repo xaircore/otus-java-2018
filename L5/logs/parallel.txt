@@ -1,0 +1,51 @@
+[0.025s][info][gc] Using Parallel
+GC name: PS MarkSweep
+GC name: PS Scavenge
+[0.562s][info][gc] GC(0) Pause Young (Allocation Failure) 32M->28M(123M) 51.741ms
+[0.736s][info][gc] GC(1) Pause Young (Allocation Failure) 61M->60M(123M) 157.802ms
+[0.955s][info][gc] GC(2) Pause Full (Ergonomics) 60M->60M(123M) 219.546ms
+[1.229s][info][gc] GC(3) Pause Full (Ergonomics) 92M->92M(123M) 260.636ms
+[1.643s][info][gc] GC(4) Pause Full (Ergonomics) 117M->116M(123M) 407.332ms
+[1.952s][info][gc] GC(5) Pause Full (Ergonomics) 117M->117M(123M) 307.568ms
+[2.227s][info][gc] GC(6) Pause Full (Ergonomics) 117M->117M(123M) 274.878ms
+[2.460s][info][gc] GC(7) Pause Full (Ergonomics) 117M->117M(123M) 232.963ms
+[2.670s][info][gc] GC(8) Pause Full (Ergonomics) 117M->117M(123M) 209.282ms
+[2.883s][info][gc] GC(9) Pause Full (Ergonomics) 117M->117M(123M) 213.270ms
+[3.099s][info][gc] GC(10) Pause Full (Ergonomics) 117M->117M(123M) 214.885ms
+[3.314s][info][gc] GC(11) Pause Full (Ergonomics) 117M->117M(123M) 215.380ms
+[3.524s][info][gc] GC(12) Pause Full (Ergonomics) 117M->117M(123M) 210.085ms
+[3.736s][info][gc] GC(13) Pause Full (Ergonomics) 117M->117M(123M) 211.662ms
+[3.962s][info][gc] GC(14) Pause Full (Ergonomics) 117M->117M(123M) 225.299ms
+[4.173s][info][gc] GC(15) Pause Full (Ergonomics) 117M->117M(123M) 210.606ms
+[4.384s][info][gc] GC(16) Pause Full (Ergonomics) 117M->117M(123M) 211.044ms
+[4.599s][info][gc] GC(17) Pause Full (Ergonomics) 117M->117M(123M) 214.517ms
+[4.806s][info][gc] GC(18) Pause Full (Ergonomics) 117M->117M(123M) 207.043ms
+[5.024s][info][gc] GC(19) Pause Full (Ergonomics) 117M->117M(123M) 218.416ms
+[5.235s][info][gc] GC(20) Pause Full (Ergonomics) 117M->117M(123M) 209.965ms
+[5.451s][info][gc] GC(21) Pause Full (Ergonomics) 117M->117M(123M) 216.523ms
+[5.683s][info][gc] GC(22) Pause Full (Ergonomics) 117M->117M(123M) 231.433ms
+[5.906s][info][gc] GC(23) Pause Full (Ergonomics) 117M->117M(123M) 222.668ms
+[6.121s][info][gc] GC(24) Pause Full (Ergonomics) 117M->117M(123M) 214.882ms
+[6.333s][info][gc] GC(25) Pause Full (Ergonomics) 117M->117M(123M) 211.478ms
+[6.550s][info][gc] GC(26) Pause Full (Ergonomics) 117M->117M(123M) 216.525ms
+[6.761s][info][gc] GC(27) Pause Full (Ergonomics) 117M->117M(123M) 210.832ms
+[6.979s][info][gc] GC(28) Pause Full (Ergonomics) 117M->117M(123M) 217.099ms
+[7.189s][info][gc] GC(29) Pause Full (Ergonomics) 117M->117M(123M) 210.056ms
+[7.399s][info][gc] GC(30) Pause Full (Ergonomics) 117M->117M(123M) 210.025ms
+[7.609s][info][gc] GC(31) Pause Full (Ergonomics) 117M->117M(123M) 209.788ms
+[7.821s][info][gc] GC(32) Pause Full (Ergonomics) 117M->117M(123M) 211.320ms
+[8.037s][info][gc] GC(33) Pause Full (Ergonomics) 117M->117M(123M) 215.645ms
+[8.247s][info][gc] GC(34) Pause Full (Ergonomics) 117M->117M(123M) 209.196ms
+[8.464s][info][gc] GC(35) Pause Full (Ergonomics) 117M->117M(123M) 216.735ms
+[8.692s][info][gc] GC(36) Pause Full (Ergonomics) 117M->117M(123M) 227.617ms
+[8.918s][info][gc] GC(37) Pause Full (Ergonomics) 117M->117M(123M) 225.851ms
+[9.129s][info][gc] GC(38) Pause Full (Ergonomics) 117M->117M(123M) 211.304ms
+[9.340s][info][gc] GC(39) Pause Full (Ergonomics) 117M->117M(123M) 210.422ms
+[9.556s][info][gc] GC(40) Pause Full (Ergonomics) 117M->117M(123M) 216.098ms
+[9.766s][info][gc] GC(41) Pause Full (Ergonomics) 117M->117M(123M) 209.273ms
+[9.999s][info][gc] GC(42) Pause Full (Ergonomics) 117M->117M(123M) 233.096ms
+[10.214s][info][gc] GC(43) Pause Full (Ergonomics) 117M->117M(123M) 214.224ms
+[10.221s][info][gc] GC(44) Pause Full (Ergonomics) 117M->1M(105M) 7.149ms
+Exception in thread "main" java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at com.xairlab.otus.gc.Benchmark.run(Benchmark.java:21)
+	at com.xairlab.otus.gc.GcDemo.main(GcDemo.java:25)

@@ -1,0 +1,80 @@
+[0.033s][info][gc] Using G1
+[0.061s][info][gc] Periodic GC disabled
+GC name: G1 Young Generation
+GC name: G1 Old Generation
+[0.465s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 34M->31M(128M) 28.838ms
+[0.485s][info][gc] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 35M->36M(128M) 15.496ms
+[0.516s][info][gc] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 46M->46M(128M) 21.849ms
+[0.578s][info][gc] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 64M->65M(128M) 40.600ms
+[0.628s][info][gc] GC(4) Pause Young (Concurrent Start) (G1 Evacuation Pause) 80M->80M(128M) 39.895ms
+[0.628s][info][gc] GC(5) Concurrent Cycle
+start:375 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(28 ms)
+start:408 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(15 ms)
+start:433 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(21 ms)
+start:476 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(40 ms)
+start:526 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(40 ms)
+[0.680s][info][gc] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 90M->91M(128M) 31.119ms
+start:587 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(31 ms)
+[0.709s][info][gc] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 97M->97M(128M) 17.826ms
+start:630 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(17 ms)
+[0.731s][info][gc] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 102M->103M(128M) 17.420ms
+start:652 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(17 ms)
+[0.748s][info][gc] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 108M->108M(128M) 12.085ms
+start:674 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(12 ms)
+[0.764s][info][gc] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 113M->114M(128M) 10.315ms
+start:692 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(10 ms)
+[0.780s][info][gc] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 119M->119M(128M) 10.201ms
+start:708 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(10 ms)
+[0.803s][info][gc] GC(12) To-space exhausted
+[0.804s][info][gc] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 124M->126M(128M) 18.396ms
+[1.058s][info][gc] GC(13) Pause Full (G1 Evacuation Pause) 126M->117M(128M) 253.868ms
+[1.059s][info][gc] GC(5) Concurrent Cycle 430.938ms
+start:723 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(19 ms)
+[1.086s][info][gc] GC(14) To-space exhausted
+[1.086s][info][gc] GC(14) Pause Young (Normal) (G1 Evacuation Pause) 123M->123M(128M) 23.199ms
+[1.305s][info][gc] GC(15) Pause Full (G1 Evacuation Pause) 123M->123M(128M) 219.600ms
+start:742 Name:G1 Old Generation, action:end of major GC, gcCause:G1 Evacuation Pause(254 ms)
+[1.319s][info][gc] GC(16) To-space exhausted
+[1.319s][info][gc] GC(16) Pause Young (Concurrent Start) (G1 Evacuation Pause) 125M->125M(128M) 9.596ms
+[1.319s][info][gc] GC(18) Concurrent Cycle
+[1.536s][info][gc] GC(17) Pause Full (G1 Evacuation Pause) 125M->125M(128M) 216.927ms
+start:1001 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(23 ms)
+[1.537s][info][gc] GC(18) Concurrent Cycle 217.839ms
+[1.542s][info][gc] GC(19) To-space exhausted
+[1.543s][info][gc] GC(19) Pause Young (Normal) (G1 Evacuation Pause) 126M->126M(128M) 5.468ms
+[1.829s][info][gc] GC(20) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 286.362ms
+[2.091s][info][gc] GC(21) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 261.787ms
+[2.092s][info][gc] GC(22) Pause Young (Concurrent Start) (G1 Evacuation Pause) 126M->126M(128M) 0.616ms
+[2.092s][info][gc] GC(24) Concurrent Cycle
+[2.300s][info][gc] GC(23) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 208.048ms
+[2.488s][info][gc] GC(25) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 187.364ms
+[2.488s][info][gc] GC(24) Concurrent Cycle 395.767ms
+[2.488s][info][gc] GC(26) Pause Young (Normal) (G1 Evacuation Pause) 126M->126M(128M) 0.380ms
+[2.689s][info][gc] GC(27) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 200.952ms
+[2.878s][info][gc] GC(28) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 188.063ms
+[2.878s][info][gc] GC(29) Pause Young (Concurrent Start) (G1 Evacuation Pause) 126M->126M(128M) 0.487ms
+[2.878s][info][gc] GC(31) Concurrent Cycle
+[3.035s][info][gc] GC(30) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 156.707ms
+[3.190s][info][gc] GC(32) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 154.727ms
+[3.190s][info][gc] GC(31) Concurrent Cycle 311.767ms
+[3.191s][info][gc] GC(33) Pause Young (Normal) (G1 Evacuation Pause) 126M->126M(128M) 0.449ms
+[3.356s][info][gc] GC(34) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 165.358ms
+[3.503s][info][gc] GC(35) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 146.812ms
+[3.504s][info][gc] GC(36) Pause Young (Concurrent Start) (G1 Evacuation Pause) 126M->126M(128M) 0.526ms
+[3.504s][info][gc] GC(38) Concurrent Cycle
+[3.665s][info][gc] GC(37) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 160.892ms
+[3.812s][info][gc] GC(39) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 146.758ms
+[3.812s][info][gc] GC(38) Concurrent Cycle 308.097ms
+[3.813s][info][gc] GC(40) Pause Young (Normal) (G1 Evacuation Pause) 126M->126M(128M) 0.360ms
+[3.980s][info][gc] GC(41) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 167.151ms
+[4.128s][info][gc] GC(42) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 147.570ms
+[4.129s][info][gc] GC(43) Pause Young (Concurrent Start) (G1 Evacuation Pause) 126M->126M(128M) 0.495ms
+[4.129s][info][gc] GC(45) Concurrent Cycle
+[4.284s][info][gc] GC(44) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 154.611ms
+[4.431s][info][gc] GC(46) Pause Full (G1 Evacuation Pause) 126M->126M(128M) 147.258ms
+[4.431s][info][gc] GC(45) Concurrent Cycle 302.238ms
+[4.432s][info][gc] GC(47) Pause Young (Normal) (G1 Evacuation Pause) 126M->126M(128M) 0.343ms
+[4.437s][info][gc] GC(48) Pause Full (G1 Evacuation Pause) 126M->1M(128M) 4.917ms
+start:1248 Name:G1 Young Generation, action:end of minor GC, gcCause:G1 Evacuation Pause(9 ms)
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+start:1257 Name:G1 Old Generation, action:end of major GC, gcCause:G1 Evacuation Pause(217 ms)

@@ -1,0 +1,33 @@
+[0.015s][info][gc] Using Serial
+GC name: Copy
+GC name: MarkSweepCompact
+[0.517s][info][gc] GC(0) Pause Young (Allocation Failure) 34M->30M(123M) 58.422ms
+[0.661s][info][gc] GC(1) Pause Young (Allocation Failure) 64M->63M(123M) 105.343ms
+[0.868s][info][gc] GC(3) Pause Full (Allocation Failure) 97M->97M(123M) 197.290ms
+[0.868s][info][gc] GC(2) Pause Young (Allocation Failure) 97M->97M(123M) 197.538ms
+start:402 Name:Copy, action:end of minor GC, gcCause:Allocation Failure(58 ms)
+start:499 Name:Copy, action:end of minor GC, gcCause:Allocation Failure(105 ms)
+start:614 Name:Copy, action:end of minor GC, gcCause:Allocation Failure(0 ms)
+start:614 Name:MarkSweepCompact, action:end of major GC, gcCause:Allocation Failure(197 ms)
+[1.140s][info][gc] GC(4) Pause Full (Allocation Failure) 123M->123M(123M) 219.640ms
+start:864 Name:MarkSweepCompact, action:end of major GC, gcCause:Allocation Failure(220 ms)
+[1.393s][info][gc] GC(5) Pause Full (Allocation Failure) 123M->123M(123M) 245.006ms
+[1.661s][info][gc] GC(6) Pause Full (Allocation Failure) 123M->123M(123M) 267.100ms
+[1.835s][info][gc] GC(7) Pause Full (Allocation Failure) 123M->123M(123M) 173.485ms
+[2.021s][info][gc] GC(8) Pause Full (Allocation Failure) 123M->123M(123M) 185.257ms
+[2.216s][info][gc] GC(9) Pause Full (Allocation Failure) 123M->123M(123M) 195.487ms
+[2.384s][info][gc] GC(10) Pause Full (Allocation Failure) 123M->123M(123M) 166.031ms
+[2.548s][info][gc] GC(11) Pause Full (Allocation Failure) 123M->123M(123M) 164.125ms
+[2.714s][info][gc] GC(12) Pause Full (Allocation Failure) 123M->123M(123M) 165.731ms
+[2.879s][info][gc] GC(13) Pause Full (Allocation Failure) 123M->123M(123M) 164.884ms
+[3.067s][info][gc] GC(14) Pause Full (Allocation Failure) 123M->123M(123M) 188.009ms
+[3.230s][info][gc] GC(15) Pause Full (Allocation Failure) 123M->123M(123M) 162.549ms
+[3.397s][info][gc] GC(16) Pause Full (Allocation Failure) 123M->123M(123M) 166.266ms
+[3.581s][info][gc] GC(17) Pause Full (Allocation Failure) 123M->123M(123M) 183.899ms
+[3.745s][info][gc] GC(18) Pause Full (Allocation Failure) 123M->123M(123M) 163.691ms
+[3.905s][info][gc] GC(19) Pause Full (Allocation Failure) 123M->123M(123M) 160.564ms
+[3.936s][info][gc] GC(20) Pause Full (Allocation Failure) 123M->1M(123M) 29.839ms
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at com.xairlab.otus.gc.Benchmark.run(Benchmark.java:21)
+	at com.xairlab.otus.gc.GcDemo.main(GcDemo.java:25)
+start:1337 Name:MarkSweepCompact, action:end of major GC, gcCause:Allocation Failure(267 ms)

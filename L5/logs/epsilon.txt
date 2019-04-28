@@ -1,0 +1,24 @@
+[0.035s][info][gc] Non-resizeable heap; start/max: 128M
+[0.035s][info][gc] Using TLAB allocation; max: 4096K
+[0.035s][info][gc] Elastic TLABs enabled; elasticity: 1.10x
+[0.035s][info][gc] Elastic TLABs decay enabled; decay time: 1000ms
+[0.035s][info][gc] Using Epsilon
+GC name: Epsilon Heap
+[0.451s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 23M (18.21%) used
+[0.474s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 29M (23.23%) used
+[0.479s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 36M (28.30%) used
+[0.484s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 42M (33.38%) used
+[0.491s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 49M (38.46%) used
+[0.497s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 55M (43.54%) used
+[0.503s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 62M (48.62%) used
+[0.508s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 68M (53.69%) used
+[0.513s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 75M (58.77%) used
+[0.517s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 81M (63.85%) used
+[0.522s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 88M (68.93%) used
+[0.528s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 94M (74.01%) used
+[0.532s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 101M (79.08%) used
+[0.537s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 107M (84.16%) used
+[0.541s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 114M (89.24%) used
+[0.546s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 120M (94.32%) used
+[0.551s][info][gc] Heap: 128M reserved, 128M (100.00%) committed, 127M (99.40%) used
+Terminating due to java.lang.OutOfMemoryError: Java heap space

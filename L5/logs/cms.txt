@@ -1,0 +1,43 @@
+OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[0.044s][info][gc] Using Concurrent Mark Sweep
+GC name: ParNew
+GC name: ConcurrentMarkSweep
+[0.664s][info][gc] GC(0) Pause Young (Allocation Failure) 34M->32M(123M) 146.443ms
+[0.899s][info][gc] GC(1) Pause Young (Allocation Failure) 66M->74M(123M) 209.436ms
+[0.901s][info][gc] GC(2) Pause Initial Mark 74M->74M(123M) 1.395ms
+[0.901s][info][gc] GC(2) Concurrent Mark
+[0.984s][info][gc] GC(2) Concurrent Mark 83.230ms
+[1.215s][info][gc] GC(4) Pause Full (Allocation Failure) 108M->97M(123M) 305.313ms
+[1.216s][info][gc] GC(3) Pause Young (Allocation Failure) 108M->97M(123M) 305.664ms
+start:445 Name:ParNew, action:end of minor GC, gcCause:Allocation Failure(146 ms)
+start:618 Name:ParNew, action:end of minor GC, gcCause:Allocation Failure(209 ms)
+start:838 Name:ParNew, action:end of minor GC, gcCause:Allocation Failure(0 ms)
+start:838 Name:ConcurrentMarkSweep, action:end of major GC, gcCause:Allocation Failure(305 ms)
+[1.567s][info][gc] GC(5) Pause Full (Allocation Failure) 123M->122M(123M) 298.430ms
+[1.593s][info][gc] GC(6) Pause Initial Mark 122M->122M(123M) 24.960ms
+[1.593s][info][gc] GC(6) Concurrent Mark
+start:1197 Name:ConcurrentMarkSweep, action:end of major GC, gcCause:Allocation Failure(298 ms)
+[1.709s][info][gc] GC(6) Concurrent Mark 116.048ms
+[2.024s][info][gc] GC(7) Pause Full (Allocation Failure) 123M->123M(123M) 411.708ms
+[2.256s][info][gc] GC(8) Pause Full (Allocation Failure) 123M->123M(123M) 229.630ms
+[2.469s][info][gc] GC(9) Pause Full (Allocation Failure) 123M->123M(123M) 212.292ms
+[2.718s][info][gc] GC(10) Pause Full (Allocation Failure) 123M->123M(123M) 248.329ms
+[2.735s][info][gc] GC(11) Pause Initial Mark 123M->123M(123M) 17.454ms
+[2.735s][info][gc] GC(11) Concurrent Mark
+start:1540 Name:ConcurrentMarkSweep, action:end of major GC, gcCause:Allocation Failure(411 ms)[2.826s][info][gc] GC(11) Concurrent Mark 91.072ms
+[3.064s][info][gc] GC(12) Pause Full (Allocation Failure) 123M->123M(123M) 325.629ms
+
+[3.262s][info][gc] GC(13) Pause Full (Allocation Failure) 123M->123M(123M) 197.764ms
+[3.462s][info][gc] GC(15) Pause Full (Allocation Failure) 123M->123M(123M) 198.686ms
+[3.658s][info][gc] GC(16) Pause Full (Allocation Failure) 123M->123M(123M) 196.244ms
+[3.860s][info][gc] GC(17) Pause Full (Allocation Failure) 123M->123M(123M) 201.524ms
+[4.057s][info][gc] GC(18) Pause Full (Allocation Failure) 123M->123M(123M) 196.969ms
+[4.076s][info][gc] GC(14) Pause Initial Mark 123M->123M(123M) 18.532ms
+[4.076s][info][gc] GC(14) Concurrent Mark
+[4.080s][info][gc] GC(14) Concurrent Mark 3.711ms
+[4.124s][info][gc] GC(19) Pause Full (Allocation Failure) 123M->1M(123M) 47.431ms
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at com.xairlab.otus.gc.Benchmark.run(Benchmark.java:21)
+	at com.xairlab.otus.gc.GcDemo.main(GcDemo.java:25)
+start:1955 Name:ConcurrentMarkSweep, action:end of major GC, gcCause:Allocation Failure(229 ms)
+start:2185 Name:ConcurrentMarkSweep, action:end of major GC, gcCause:Allocation Failure(212 ms)
