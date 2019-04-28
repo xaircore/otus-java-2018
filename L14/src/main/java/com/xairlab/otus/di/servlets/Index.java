@@ -10,19 +10,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 @Controller
 public class Index {
 
     private final UserService userService;
 
-    public Index(UserService userService){
+    public Index(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping({"/"})
     public String index(Model model) {
-        model.addAttribute("find", new User());
+        model.addAttribute("user", new User());
         return "index.html";
     }
 
@@ -51,12 +53,19 @@ public class Index {
 
     @PostMapping({"/find"})
     public RedirectView find(@ModelAttribute User user) {
-        List<User> users = userService.all();
-        for (User currentUser : users) {
-            if (currentUser.getName().equals(user.getName())) {
-                return new RedirectView("/find", true);
-            }
+        User currentUser = userService.findByName(user.getName());
+        if (currentUser == null) {
+            Map<String, Object> model = new TreeMap<>();
+            model.put("user", new User());
+            RedirectView redirectView = new RedirectView("/", true);
+            redirectView.setAttributesMap(model);
+            return redirectView;
+        } else {
+            Map<String, Object> model = new TreeMap<>();
+            model.put("user", currentUser);
+            RedirectView redirectView = new RedirectView("/find", true);
+            redirectView.setAttributesMap(model);
+            return redirectView;
         }
-        return new RedirectView("/", true);
     }
 }

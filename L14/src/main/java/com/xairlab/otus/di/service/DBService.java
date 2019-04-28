@@ -26,13 +26,15 @@ public class DBService<T> implements StoreService<T> {
     }
 
     @Override
-    public T load(long id, Class<T> clazz) {
-        return session.get(clazz, id);
-    }
-
-    @Override
     public List<T> all() {
         Query query = session.createQuery("from User");
         return query.list();
+    }
+
+    @Override
+    public T findByName(String name) {
+        Query query = session.createQuery("from User where name=:name");
+        query.setParameter("name", name);
+        return (T) query.getSingleResult();
     }
 }

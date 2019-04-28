@@ -6,7 +6,7 @@ public interface StoreService<T> {
 
     void save(T objectData);
 
-    T load(long id, Class<T> clazz);
-
     List<T> all();
+
+    T findByName(String name);
 }
