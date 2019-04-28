@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 public final class Suite {
 
-    static Logger logger = LoggerFactory.getLogger(Runner.class);
+    private static Logger logger = LoggerFactory.getLogger(Runner.class);
 
     private final String name;
     private Method before;

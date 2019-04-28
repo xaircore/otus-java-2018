@@ -16,7 +16,7 @@ import java.util.Iterator;
 
 public class Dson {
 
-    static Logger logger = LoggerFactory.getLogger(Dson.class);
+    private static Logger logger = LoggerFactory.getLogger(Dson.class);
 
     private JsonObjectBuilder json;
     private Object object;

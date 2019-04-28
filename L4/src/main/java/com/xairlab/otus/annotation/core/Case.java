@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class Case {
 
-    static Logger logger = LoggerFactory.getLogger(Runner.class);
+    private static Logger logger = LoggerFactory.getLogger(Runner.class);
 
     private final Object instance;
     private final Method before;

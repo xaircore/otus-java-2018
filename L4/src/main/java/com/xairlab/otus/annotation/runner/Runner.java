@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 public class Runner {
 
-    static Logger logger = LoggerFactory.getLogger(Runner.class);
+    private static Logger logger = LoggerFactory.getLogger(Runner.class);
 
     int total = 0;
     int success = 0;

@@ -1,13 +1,19 @@
 package com.xairlab.otus.patterns.atm;
 
 public enum Banknote {
-    FIFTY,
-    HUNDRED,
-    TWO_HUNDRED,
-    FIVE_HUNDRED,
-    THOUSAND,
-    TWO_THOUSAND,
-    FIVE_THOUSAND;
+    FIFTY(50),
+    HUNDRED(100),
+    TWO_HUNDRED(200),
+    FIVE_HUNDRED(500),
+    THOUSAND(1000),
+    TWO_THOUSAND(2000),
+    FIVE_THOUSAND(5000);
+
+    private int nominal;
+
+    Banknote(int nominal) {
+        this.nominal = nominal;
+    }
 
     public static Banknote getByNominal(int nominal) {
         Banknote banknote;
@@ -39,62 +45,12 @@ public enum Banknote {
         return banknote;
     }
 
-    public static int getByBanknote(Banknote banknote) {
-        int nominal;
-        switch (banknote) {
-            case FIFTY:
-                nominal = 50;
-                break;
-            case HUNDRED:
-                nominal = 100;
-                break;
-            case TWO_HUNDRED:
-                nominal = 200;
-                break;
-            case FIVE_HUNDRED:
-                nominal = 500;
-                break;
-            case THOUSAND:
-                nominal = 1000;
-                break;
-            case TWO_THOUSAND:
-                nominal = 2000;
-                break;
-            case FIVE_THOUSAND:
-                nominal = 5000;
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + banknote);
-        }
+    public int getNominal() {
         return nominal;
     }
 
     @Override
     public String toString() {
-        String result = "";
-        switch (this) {
-            case FIFTY:
-                result = "50";
-                break;
-            case HUNDRED:
-                result = "100";
-                break;
-            case TWO_HUNDRED:
-                result = "200";
-                break;
-            case FIVE_HUNDRED:
-                result = "500";
-                break;
-            case THOUSAND:
-                result = "1000";
-                break;
-            case TWO_THOUSAND:
-                result = "2000";
-                break;
-            case FIVE_THOUSAND:
-                result = "5000";
-                break;
-        }
-        return result;
+        return String.valueOf(nominal);
     }
 }

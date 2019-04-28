@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 public class ATM {
 
-    static Logger logger = LoggerFactory.getLogger(ATM.class);
+    private static Logger logger = LoggerFactory.getLogger(ATM.class);
 
     private Map<Banknote, Box> inner;
 

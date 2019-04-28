@@ -10,22 +10,22 @@ import org.slf4j.LoggerFactory;
 
 public class ATM implements State, Maintance {
 
-    static Logger logger = LoggerFactory.getLogger(ATM.class);
+    private static Logger logger = LoggerFactory.getLogger(ATM.class);
 
-    private Map<Banknote, Box> inner;
-    private Map<Banknote, Box> state;
-    private boolean maintance = false;
+    private Map<Banknote, Box> currentState;
+    private Map<Banknote, Box> restoreState;
+    private boolean maintenance = false;
 
     public ATM(Banknote... banknotes) {
-        inner = new TreeMap<>();
+        currentState = new TreeMap<>();
         for (Banknote banknote : banknotes) {
-            inner.put(banknote, new Box(banknote));
+            currentState.put(banknote, new Box(banknote));
         }
     }
 
     public int getTotal() {
         int sum = 0;
-        for (Box box : inner.values()) {
+        for (Box box : currentState.values()) {
             sum += box.getTotal();
         }
         logger.info("Остаток в банкомате " + sum);
@@ -33,17 +33,17 @@ public class ATM implements State, Maintance {
     }
 
     public void put(Banknote banknote, int count) {
-        if (maintance) {
+        if (maintenance) {
             return;
         }
-        logger.info("Добавили в банкомат " + count + " купюр c номиналом " + Banknote.getByBanknote(banknote));
-        Box box = inner.get(banknote);
+        logger.info("Добавили в банкомат " + count + " купюр c номиналом " + banknote.getNominal());
+        Box box = currentState.get(banknote);
         box.putBanknotes(count);
     }
 
     private List<Box> getBoxes() {
         List<Box> boxes = new ArrayList<>();
-        for (Box b : inner.values()) {
+        for (Box b : currentState.values()) {
             boxes.add(b);
         }
         boxes.sort((Box a, Box b) -> b.getNominal() - a.getNominal());
@@ -52,7 +52,7 @@ public class ATM implements State, Maintance {
 
     public List<Banknote> get(int amount) {
         List<Banknote> result = new ArrayList<>();
-        if (maintance) {
+        if (maintenance) {
             return result;
         }
         if (amount > getTotal()) {
@@ -75,7 +75,7 @@ public class ATM implements State, Maintance {
                 }
                 b.getBanknotes(banknotes);
                 for (int i = 0; i < banknotes; i++) {
-                    result.add(b.getBanknoteType());
+                    result.add(b.getBanknote());
                 }
                 currentAmount -= b.getNominal() * banknotes;
             }
@@ -88,28 +88,32 @@ public class ATM implements State, Maintance {
         command.execute(this);
     }
 
-    @Override
-    public void saveState() {
+    private Map<Banknote, Box> getStateCopy(Map<Banknote, Box> state) {
         Map<Banknote, Box> copy = new TreeMap<>();
-        for (Map.Entry entry : inner.entrySet()) {
+        for (Map.Entry entry : state.entrySet()) {
             Box copyBox = (Box) entry.getValue();
             copy.put((Banknote) entry.getKey(), copyBox.copy());
         }
-        state = copy;
+        return copy;
+    }
+
+    @Override
+    public void saveState() {
+        restoreState = getStateCopy(currentState);
     }
 
     @Override
     public void restoreState() {
-        inner = state;
+        currentState = getStateCopy(restoreState);
     }
 
     @Override
     public void on() {
-        maintance = true;
+        maintenance = true;
     }
 
     @Override
     public void off() {
-        maintance = false;
+        maintenance = false;
     }
 }

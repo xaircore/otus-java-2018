@@ -5,13 +5,13 @@ import org.slf4j.LoggerFactory;
 
 public class Box {
 
-    static Logger logger = LoggerFactory.getLogger(Box.class);
+    private static Logger logger = LoggerFactory.getLogger(Box.class);
 
-    private final Banknote nominal;
+    private final Banknote banknote;
     private int count = 0;
 
-    public Box(Banknote nominal) {
-        this.nominal = nominal;
+    public Box(Banknote banknote) {
+        this.banknote = banknote;
         logger.info("Устанавливаем кассету номиналом " + getNominal() + " в банкомат");
     }
 
@@ -28,11 +28,11 @@ public class Box {
     }
 
     public int getNominal() {
-        return Banknote.getByBanknote(nominal);
+        return banknote.getNominal();
     }
 
-    public Banknote getBanknoteType() {
-        return nominal;
+    public Banknote getBanknote() {
+        return banknote;
     }
 
     public int getTotal() {
@@ -43,8 +43,8 @@ public class Box {
         return count;
     }
 
-    public Box copy(){
-        Box b = new Box(getBanknoteType());
+    public Box copy() {
+        Box b = new Box(getBanknote());
         b.putBanknotes(getCount());
         return b;
     }

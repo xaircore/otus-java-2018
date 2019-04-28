@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 public class Box {
 
-    static Logger logger = LoggerFactory.getLogger(Box.class);
+    private static Logger logger = LoggerFactory.getLogger(Box.class);
 
     private final Banknote nominal;
     private int count = 0;

@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 public class MyCache<K, V> implements HwCache<K, V> {
 
-    static Logger logger = LoggerFactory.getLogger(MyCache.class);
+    private static Logger logger = LoggerFactory.getLogger(MyCache.class);
 
     private final Map<K, SoftReference<V>> cache;
     private final List<HwListener<K, V>> listeners;

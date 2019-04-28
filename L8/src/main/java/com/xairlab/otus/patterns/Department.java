@@ -10,14 +10,12 @@ import java.util.List;
 
 public class Department {
 
-    static Logger logger = LoggerFactory.getLogger(Department.class);
+    private static Logger logger = LoggerFactory.getLogger(Department.class);
 
     private List<ATM> atms;
-    private int sum;
 
     public Department() {
         atms = new ArrayList<>();
-        sum = 0;
     }
 
     public void addATM(ATM atm) {
@@ -26,11 +24,8 @@ public class Department {
     }
 
     public int getDepartmentTotal() {
-        getTotalATM();
         logger.info("Собрали деньги с банкматов");
-        int result = sum;
-        sum = 0;
-        return result;
+        return getTotalATM();
     }
 
     public void saveState(){
@@ -50,22 +45,24 @@ public class Department {
     public void maintanceOn(){
         logger.info("Отправили банкоматы на тенхническле обслуживание");
         for (ATM atm : atms) {
-            atm.executeDepartmentCommand(new MaintanceOn());
+            atm.executeDepartmentCommand(new MaintenanceOn());
         }
     }
 
     public void maintanceOff(){
         logger.info("Вернули банкоматы с технического обслуживания");
         for (ATM atm : atms) {
-            atm.executeDepartmentCommand(new MaintanceOff());
+            atm.executeDepartmentCommand(new MaintenanceOff());
         }
     }
 
-    private void getTotalATM() {
+    private int getTotalATM() {
+        int sum = 0;
         for (ATM atm : atms) {
             GetCash command = new GetCash();
             atm.executeDepartmentCommand(command);
             sum += command.getSum();
         }
+        return sum;
     }
 }
