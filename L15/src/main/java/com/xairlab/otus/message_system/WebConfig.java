@@ -1,4 +1,4 @@
-package com.xairlab.otus.di;
+package com.xairlab.otus.message_system;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;

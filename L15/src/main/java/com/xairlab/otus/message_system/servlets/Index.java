@@ -1,17 +1,12 @@
-package com.xairlab.otus.di.servlets;
+package com.xairlab.otus.message_system.servlets;
 
-import com.xairlab.otus.di.entity.User;
-import com.xairlab.otus.di.service.UserService;
+import com.xairlab.otus.message_system.entity.User;
+import com.xairlab.otus.message_system.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
 @Controller
 public class Index {

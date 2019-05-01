@@ -1,8 +1,8 @@
-package com.xairlab.otus.di.servlets;
+package com.xairlab.otus.message_system.servlets;
 
-import com.xairlab.otus.di.entity.Message;
-import com.xairlab.otus.di.entity.User;
-import com.xairlab.otus.di.service.UserService;
+import com.xairlab.otus.message_system.entity.Message;
+import com.xairlab.otus.message_system.entity.User;
+import com.xairlab.otus.message_system.service.UserService;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;

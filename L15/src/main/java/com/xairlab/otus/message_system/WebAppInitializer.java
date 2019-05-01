@@ -1,4 +1,4 @@
-package com.xairlab.otus.di;
+package com.xairlab.otus.message_system;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

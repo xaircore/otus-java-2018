@@ -1,6 +1,6 @@
-package com.xairlab.otus.di.connection;
+package com.xairlab.otus.message_system.connection;
 
-import com.xairlab.otus.di.entity.User;
+import com.xairlab.otus.message_system.entity.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

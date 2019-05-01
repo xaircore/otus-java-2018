@@ -1,6 +1,6 @@
-package com.xairlab.otus.di.service;
+package com.xairlab.otus.message_system.service;
 
-import com.xairlab.otus.di.entity.User;
+import com.xairlab.otus.message_system.entity.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

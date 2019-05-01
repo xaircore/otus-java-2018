@@ -1,4 +1,4 @@
-package com.xairlab.otus.di.entity;
+package com.xairlab.otus.message_system.entity;
 
 public class Message {
 

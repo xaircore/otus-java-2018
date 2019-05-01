@@ -1,6 +1,6 @@
-package com.xairlab.otus.di.service;
+package com.xairlab.otus.message_system.service;
 
-import com.xairlab.otus.di.connection.H2Connection;
+import com.xairlab.otus.message_system.connection.H2Connection;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;

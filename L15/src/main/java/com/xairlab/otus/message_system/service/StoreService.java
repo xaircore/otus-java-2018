@@ -1,4 +1,4 @@
-package com.xairlab.otus.di.service;
+package com.xairlab.otus.message_system.service;
 
 import java.util.List;
 
