@@ -3,7 +3,6 @@ package com.xairlab.otus.message_system.messages;
 
 import com.xairlab.otus.message_system.entity.Address;
 import com.xairlab.otus.message_system.entity.FrontendService;
-import com.xairlab.otus.message_system.entity.MsgToFrontend;
 import com.xairlab.otus.message_system.entity.User;
 
 import java.util.List;
@@ -18,6 +17,6 @@ public class MsgGetUsersAnswer extends MsgToFrontend {
 
     @Override
     public void exec(FrontendService frontendService) {
-        frontendService.addUsers(users);
+        frontendService.getUsersHandler(users);
     }
 }

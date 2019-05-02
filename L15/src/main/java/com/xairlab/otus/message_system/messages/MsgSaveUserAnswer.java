@@ -1,9 +1,7 @@
 package com.xairlab.otus.message_system.messages;
 
-
 import com.xairlab.otus.message_system.entity.Address;
 import com.xairlab.otus.message_system.entity.FrontendService;
-import com.xairlab.otus.message_system.entity.MsgToFrontend;
 import com.xairlab.otus.message_system.entity.User;
 
 public class MsgSaveUserAnswer extends MsgToFrontend {
@@ -16,6 +14,6 @@ public class MsgSaveUserAnswer extends MsgToFrontend {
 
     @Override
     public void exec(FrontendService frontendService) {
-        frontendService.addUser(user);
+        frontendService.saveUserHandler(user);
     }
 }

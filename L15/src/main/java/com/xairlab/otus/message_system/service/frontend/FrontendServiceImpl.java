@@ -1,7 +1,7 @@
 package com.xairlab.otus.message_system.service.frontend;
 
-
 import com.xairlab.otus.message_system.entity.*;
+import com.xairlab.otus.message_system.messages.Message;
 import com.xairlab.otus.message_system.messages.MsgGetUsers;
 import com.xairlab.otus.message_system.messages.MsgSaveUser;
 import org.springframework.stereotype.Service;
@@ -29,29 +29,29 @@ public class FrontendServiceImpl implements FrontendService {
     }
 
     @Override
-    public void getUsers() {
-        Message message = new MsgGetUsers(getAddress(), context.getDbAddress());
+    public void getUsersAction() {
+        Message message = new MsgGetUsers(context.getFrontAddress(), context.getDbAddress());
         context.getMessageSystem().sendMessage(message);
     }
 
     @Override
-    public void addUsers(List<User> users) {
+    public void getUsersHandler(List<User> users) {
         this.users = users;
     }
 
     @Override
-    public void addUser(User user) {
+    public void saveUserHandler(User user) {
         users.add(user);
     }
 
     @Override
-    public List<User> getFrontendUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
     @Override
-    public void saveUser(String name, int age) {
-        Message message = new MsgSaveUser(getAddress(), context.getDbAddress(), name, age);
+    public void saveUserAction(String name, int age) {
+        Message message = new MsgSaveUser(context.getFrontAddress(), context.getDbAddress(), name, age);
         context.getMessageSystem().sendMessage(message);
     }
 

@@ -1,4 +1,8 @@
-package com.xairlab.otus.message_system.entity;
+package com.xairlab.otus.message_system.messages;
+
+import com.xairlab.otus.message_system.entity.Address;
+import com.xairlab.otus.message_system.entity.Addressee;
+import com.xairlab.otus.message_system.entity.DBService;
 
 public abstract class MsgToDB extends Message {
 

@@ -1,5 +1,7 @@
 package com.xairlab.otus.message_system.entity;
 
+import com.xairlab.otus.message_system.messages.Message;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

@@ -9,14 +9,14 @@ public interface FrontendService extends Addressee {
 
     void init();
 
-    void getUsers();
+    void getUsersAction();
 
-    void addUsers(List<User> user);
+    void saveUserAction(String name, int age);
 
-    void addUser(User user);
+    void getUsersHandler(List<User> user);
 
-    void saveUser(String name, int age);
+    void saveUserHandler(User user);
 
-    List<User> getFrontendUsers();
+    List<User> getUsers();
 }
 
