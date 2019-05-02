@@ -1,31 +1,22 @@
 package com.xairlab.otus.message_system.entity;
 
-public class Message {
+public abstract class Message {
 
-    private String name;
-    private int age;
+    private final Address from;
+    private final Address to;
 
-    public String getName() {
-        return name;
+    public Message(Address from, Address to) {
+        this.from = from;
+        this.to = to;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Address getFrom() {
+        return from;
     }
 
-    public int getAge() {
-        return age;
+    public Address getTo() {
+        return to;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Message{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
+    public abstract void exec(Addressee addressee);
 }
